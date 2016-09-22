@@ -23,7 +23,7 @@ header {
           line-height: 100px;
           display: block;
           border-top: 5px solid $red;
-          &:hover{
+          &:hover, &:active, &:focus {
             border-top-color: #fff;
             color: #fff;
           }
