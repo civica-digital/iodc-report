@@ -14,15 +14,15 @@ $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);
 
 .container{
-  width: 1200px; margin: 0 auto;
+  width: 1200px; margin: 0 auto; padding-left: 40px; padding-right: 40px;
   @media (min-width: 960px) and (max-width: 1119px){
-  width: 960px; padding-left:15px; padding-right:15px;
+  width: 960px; padding-left:25px; padding-right:25px;
   }
   @media (min-width: 780px) and (max-width: 959px){
-    width: 780px; padding-left:15px; padding-right:15px;
+    width: 780px; padding-left:20px; padding-right:20px;
   }
   @media (min-width: 320px) and (max-width: 779px){
-    width: 100%; padding-left:10px; padding-right:10px;
+    width: 100%; padding-left:15px; padding-right:15px;
   }
 }
 

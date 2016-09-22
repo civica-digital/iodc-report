@@ -1,0 +1,31 @@
+.wide-accordion {
+  .js-accordion-trigger{
+    cursor: pointer;
+  }
+  > li > h4{
+    font-weight: normal;
+    color: #fff;
+    background-color: $red;
+    padding: 10px 20px;
+    &:after {
+      content: url(../images/icons/arrow-bottom-white.svg);
+      float: right;
+    }
+  }
+
+  .content {
+    display: none;
+    padding: 10px 0;
+  }
+
+  .is-expanded {
+    > h4:after {
+      content: url(../images/icons/arrow-top-white.svg);
+    }
+
+    display: block;
+  }
+  .block{
+    display: block;
+  }
+}

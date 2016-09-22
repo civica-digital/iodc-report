@@ -8,8 +8,13 @@ $(document).ready(function(){
     slidesToScroll: 3
   });
 
-  $('.js-accordion-trigger').bind('click', function(e){
+  $('.accordion .js-accordion-trigger').bind('click', function(e){
     jQuery(this).parent().find('p').slideToggle('fast');
+    jQuery(this).parent().toggleClass('is-expanded');
+    e.preventDefault();
+  });
+  $('.wide-accordion .js-accordion-trigger').bind('click', function(e){
+    jQuery(this).parent().find('.content').slideToggle('fast');
     jQuery(this).parent().toggleClass('is-expanded');
     e.preventDefault();
   });

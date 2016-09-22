@@ -19,5 +19,14 @@
 
     = yield
     %footer
+      .container
+        .logos
+          =image_tag 'logo-idrc.png'
+          =image_tag 'logo-od.png'
+          =image_tag 'logo-civica.png'
+
+        %nav
+          =link_to 'Contact', '#'
+          =link_to 'Faq + info', '#'
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"

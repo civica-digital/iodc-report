@@ -1,0 +1,15 @@
+ul.buzz {
+  li{
+    margin-bottom: 20px;
+    p{
+      margin-bottom: 0;
+      i{
+        color:$red;
+      }
+    }
+    .date{
+      font-size: 14px;
+      opacity: .6;
+    }
+  }
+}
