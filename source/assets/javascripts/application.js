@@ -2,6 +2,22 @@
 
 $(document).ready(function(){
 
+  //navbar fixed
+  var navbar = $('.navbar-static-top'),
+      distance = navbar.offset().top,
+      $window = $(window);
+
+  $window.scroll(function() {
+      if ($window.scrollTop() > distance) {
+          navbar.removeClass('navbar-fixed-top').addClass('navbar-fixed-top');
+          $(".nav-bar li a").css("color", "#fff");
+      } else {
+          navbar.removeClass('navbar-fixed-top');
+          $("body").css("padding-top", "0px");
+      }
+  });
+
+  //nav scroll on page
   (function (jQuery) {
     jQuery.mark = {
       jump: function (options) {
@@ -27,11 +43,11 @@ $(document).ready(function(){
     };
   })(jQuery);
 
+  jQuery(function(){
+    jQuery.mark.jump();
+  });
 
-jQuery(function(){  
-  jQuery.mark.jump();
-});
-
+  //slider
   $(".slider").slick({
     dots: false,
     infinite: false,
@@ -39,6 +55,7 @@ jQuery(function(){
     slidesToScroll: 3
   });
 
+  //accordions
   $('.accordion .js-accordion-trigger').bind('click', function(e){
     jQuery(this).parent().find('p').slideToggle('fast');
     jQuery(this).parent().toggleClass('is-expanded');

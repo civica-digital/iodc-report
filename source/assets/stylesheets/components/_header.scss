@@ -31,4 +31,16 @@ header {
       }
     }
   }
+  &.navbar-fixed-top{
+    height: 80px;
+    .logo{
+      padding-top: 0;
+      img{
+        max-height:  70px;
+      }
+    }
+    nav ul li a{
+      line-height: 70px;
+    }
+  }
 }
