@@ -1,0 +1,45 @@
+.gallery {
+  overflow: hidden;
+  padding: 20px 0 60px 0;
+  img{
+    display: block;
+    padding:0!important;
+    margin: 0!important;
+    max-width: 100%;
+  }
+  .h2-w1{
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+  .h1-w1{
+    float: left;
+    margin-bottom: 20px;
+    width: 50%;
+    padding-left: 10px;
+  }
+  .bg{
+    position: relative;
+    
+    blockquote{
+      color: #fff;
+      position: absolute;
+      text-align: center;
+      padding-right: 10px;
+      font-size: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      margin: 0;
+      span{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        display: block;
+      }
+    }
+  }
+
+}
