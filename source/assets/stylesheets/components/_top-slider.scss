@@ -1,0 +1,30 @@
+.top-slider {
+  hgroup{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 290px;
+    margin-top: -110px;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+  }
+  .slider{
+    margin-top: 80px;
+    .item{
+      display: flex;
+      padding: 30px;
+      img{
+        align-self: center;
+        max-width: 120px;
+        margin-right: 20px;
+      }
+      h4{
+        align-self: center;
+        text-align: center;
+        strong{
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,16 @@
     = stylesheet_link_tag "application"
 
   %body{class: page_classes}
+    %header
+      .logo
+        =image_tag 'iodc_logo.png'
+      %nav
+        %ul
+          %li=link_to 'Tracks', '#'
+          %li=link_to 'Regions', '#'
+          %li=link_to 'Community', '#'
+
     = yield
+    %footer
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"

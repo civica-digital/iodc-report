@@ -1,0 +1,28 @@
+.tags {
+  display: flex;
+  margin-top: 25px;
+  .tag{
+    color: $red;
+    border: 4px solid $red;
+    line-height: 67px;
+    font-family: 'Montserrat', sans-serif;
+    height: 75px;
+    font-weight: bold;
+    align-self: center;
+    text-align: center;
+    flex-grow: 1;
+    margin-right: 8px;
+    cursor: pointer;
+    &:hover{
+      background-color: $red;
+      color: #fff;
+    }
+    &.active{
+      background-color: $red;
+      color: #fff;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.cols {
+  overflow: hidden;
+  margin-top: 40px;
+  .half-col{
+    width: 50%;
+    float: left;
+    padding-right: 30px;
+    &:last-child{
+      padding-right: 0;
+      padding-left: 30px;
+    }
+  }
+}

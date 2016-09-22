@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans';
+
 body {
   color: $base-font-color;
   font-family: $base-font-family;
@@ -18,7 +20,9 @@ h6 {
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 1em;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -45,4 +49,30 @@ img,
 picture {
   margin: 0;
   max-width: 100%;
+}
+h1{
+  font-size:42px;
+  color: $red;
+}
+h2{
+  display: inline-block;
+  clear: both;
+  color: $dark-gray;
+  font-size: 32px;
+  line-height: 60px;
+  &.border{
+    border-bottom: 4px solid $red;
+  }
+}
+h3{
+  color: $red;
+  font-size: 32px;
+}
+
+h4{
+  font-size: 20px;
+  color: $dark-gray;
+}
+.m-t{
+  margin-top: 40px;
 }
