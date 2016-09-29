@@ -1,0 +1,42 @@
+$red: #DC0833;
+
+.tabs {
+  margin-top: 25px;
+  padding: 0;
+  overflow: hidden;
+
+  .tab {
+    display: inline;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  .tab-link {
+    display: inline-block;
+    color: $red;
+    padding: 0 30px;
+    line-height: 67px;
+    font-family: 'Montserrat', sans-serif;
+    height: 75px;
+    font-weight: bold;
+    margin-right: 8px;
+    cursor: pointer;
+    border: 4px solid $red;
+    &:hover{
+      background-color: $red;
+      color: #fff!important;
+    }
+    &.is-active{
+      background-color: $red;
+      color: #fff;
+    }
+  }
+
+  .tab-content {
+    display: none;
+    width: 100%;
+    float: left;
+  }
+}
+
