@@ -1,0 +1,18 @@
+.search {
+  .selectize-input{
+    border: 2px solid #000;
+    padding: 12px!important;
+    line-height: 28px;
+  }
+  .item{
+    background-color: $red!important;
+    color:#fff!important;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    display: inline-block;
+    margin: 2px!important;
+    padding: 3px 6px!important;
+  }
+}
+
