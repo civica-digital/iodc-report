@@ -20,7 +20,7 @@
   }
   .bg{
     position: relative;
-    
+
     blockquote{
       color: #fff;
       position: absolute;
@@ -41,5 +41,18 @@
       }
     }
   }
-
+  @media (min-width: 320px) and (max-width: 779px){
+    .h2-w1{
+      width: 100%;
+      padding-right: 0px;
+      margin-bottom: 20px;
+    }
+    .h1-w1{
+      width: 100%;
+      padding-left: 0px;
+    }
+    img{
+      width: 100%;
+    }
+  }
 }

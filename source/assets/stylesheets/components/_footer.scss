@@ -23,4 +23,22 @@ footer {
       }
     }
   }
+  @media (min-width: 320px) and (max-width: 779px){
+    height: auto;
+
+    .logos{
+      img{
+        max-height: 35px;
+      }
+    }
+    nav{
+      float: none;
+      line-height: 50px;
+      padding-bottom: 20px;
+      a{
+        padding-left: 0px;
+        padding-right: 20px;
+      }
+    }
+  }
 }
