@@ -1,0 +1,58 @@
+%section.community#community
+	.container
+		%h2.border Community
+		.gallery
+			.h2-w1.bg
+				=image_tag 'photos/photo1.png'
+				%blockquote
+					“Lorem quote ipsum”
+					%span - Paulina
+
+			.h1-w1
+				=image_tag 'photos/photo2.png'
+			.h1-w1
+				=image_tag 'photos/photo3.png'
+			.h1-w2
+				=image_tag 'photos/photo4.png'
+
+		%ul.wide-accordion
+			%li
+				%h4.js-accordion-trigger The buzz
+				.content
+					%ul.buzz
+						%li
+							%p
+								%i.fa.fa-twitter
+								%strong #IODC16
+								Agenda is finally live!! Start scheduling your sessions
+								=link_to 'http://opendatacon.org/agenda/', '#'
+								'#opendata'
+							.date 1 hour ago
+						%li
+							%p
+								%i.fa.fa-rss
+								%strong Blogpost
+								Open contracting: an innovative approach to better public procurement picks up steam.
+							.date 2 hours ago
+						%li
+							%p
+								%i.fa.fa-twitter
+								%strong #IODC16
+								Agenda is finally live!! Start scheduling your sessions
+								=link_to 'http://opendatacon.org/agenda/', '#'
+								'#opendata'
+							.date 1 hour ago
+						%li
+							%p
+								%i.fa.fa-twitter
+								%strong #IODC16
+								Agenda is finally live!! Start scheduling your sessions
+								=link_to 'http://opendatacon.org/agenda/', '#'
+								'#opendata'
+							.date 1 hour ago
+			%li
+				%h4.js-accordion-trigger Discussion
+				.content Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariaur.
+			%li
+				%h4.js-accordion-trigger Commitments
+				.content Duis aute irure dolor in voluptate velit esse cillum dolore eu fugiat nulla pariaur.
