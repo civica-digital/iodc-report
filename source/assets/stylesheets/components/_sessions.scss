@@ -19,6 +19,15 @@
 			h3{
 				font-size: 28px;
 			}
+			@media (min-width: 320px) and (max-width: 779px){
+				width: 100%;
+				padding-right: 0!important;
+			}
+			@media (min-width: 320px) and (max-width: 959px){
+				img{
+					width: 150px;
+				}
+			}
 		}
 	}
 }
