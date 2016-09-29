@@ -2,6 +2,17 @@
 
 $(document).ready(function(){
 
+  $('#textsearch').selectize({
+      delimiter: ',',
+      persist: false,
+      create: function(input) {
+          return {
+              value: input,
+              text: input
+          }
+      }
+  });
+
   //navbar fixed
   var navbar = $('.navbar-static-top'),
       distance = navbar.offset().top,
@@ -18,6 +29,8 @@ $(document).ready(function(){
   });
 
   //
+
+
   $('.tabs').each(function(index) {
     $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
   });

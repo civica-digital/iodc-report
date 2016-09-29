@@ -70,6 +70,12 @@ title: IODC Report
 				%h3 The Road Ahead
 				%p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
+%section.search
+	.container
+		%h2.border Filter information by topic
+		.search-content
+			%input{ id: "textsearch", type: "text"}
+
 %section.sessions#main-sessions
 	.container
 		%h2.border Main Sessions
@@ -152,80 +158,6 @@ title: IODC Report
 				=link_to 'Transport', '#', class: 'tab-link'
 				.tab-content
 					Transport
-%section.tracks#tracks
-	.container
-		%h2.border Tracks
-		%h4 Pick a Track:
-		.tags
-			.tag.active Education
-			.tag Agriculture
-			.tag Geoespacial
-			.tag Utilities
-			.tag Culture
-			.tag Transport
-		.cols
-			.half-col
-				%h2 2015
-				%h3 Last year summary
-				%p Open data can improve access to education, hold education providers accountable, and drive management improvements. In each case, data was an enabler; but it was only with active intermediaries—whether public, private, or non-profit—that the impacts of open data could be realized.
-				%h5 Projects shared
-				%p
-				= link_to "Open Schools Kenya", "linktoanywhere.org"
-				Brought together government data on schools with citizen-sourced data from the Map Kibera team.
-				%p
-				= link_to "Analítica Académica", "linktoanywhere.org"
-				Worked with data from universities to provide the higher education sector with information needed to improve management and the overall education system.
-				%p
-				= link_to "Open Development Initiative", "linktoanywhere.org"
-				Open research dataset by scraping thousands of university syllabi, offering a whole new way to look at the development of curriculum.
-				%p
-				%h5 Research discussed
-				%p
-				= link_to "Open Syllabus", "linktoanywhere.org"
-				University of Alicante Open Data ecosystem for Universities
-				%h3.m-t Commitments
-				%ul.accordion
-					%li
-						%h4.js-accordion-trigger Create open data repositories
-						.content
-							%p Create open data repositories for at least 10% of the Universities of the World.
-			.half-col
-				%h2 2016
-				%h3 Talks
-				%ul.accordion
-					%li
-						%h4.js-accordion-trigger Data + Edu
-						.content
-							%p
-								%strong
-									=link_to "Christian Anker", "twitter.com"
-									,
-									=link_to "Miguel Ángel Acero", "twitter.com"
-									,
-									=link_to "José Norberto Mazón", "twitter.com"
-									,
-									=link_to "Marija Kujacic", "twitter.com"
-							%p Open Data can be a catalyst to improve study programmes and push foward education. Transparency and Open Data are topics that should accompany robotics and programming in the teaching of technology, specially to kids.
-							%h5 Projects shared
-							%p
-								= link_to "Smart Kids", "linktoanywhere.org"
-								Launches interactive educational methods to bring to the students aspects such as open data, programming, robotics and others technologies
-							%p
-								= link_to "Educatransparencia", "linktoanywhere.org"
-								Website with educational resources to certify knowledge in the knowledge of transparency and information access"
-							%h5 Research discussed
-							%p
-								= link_to "OpenData4U", "linktoanywhere.org"
-								University of Alicante Open Data ecosystem for Universities
-				%h3.m-t Commitments
-				%ul.accordion
-					%li
-						%h4.js-accordion-trigger Web Foundation Education Standard
-						.content
-							%p Description: This is the description of a commitment so good that cannot be described
-							%p Indicator to follow: Number of countries that have adopted
-							%p Timeframe: One year
-							%p Actor Responsible: Web Foundation
 %section.regions#regions
 	.container
 		%h2.border Regionals
@@ -261,6 +193,58 @@ title: IODC Report
 						.half-col
 							%h3 Projects
 							%p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+%section.tracks#tracks
+	.container
+		%h2.border Action
+		%h4 Pick a Track:
+		%ul.tabs
+			%li.tab
+				=link_to 'Education', '#', class: 'tab-link'
+				.tab-content
+					.cols
+						.half-col
+							%h3 Talks
+							%ul.accordion
+								%li
+									%h4.js-accordion-trigger Create open data repositories
+									.content
+										%p Create open data repositories for at least 10% of the Universities of the World.
+								%li
+									%h4.js-accordion-trigger Create open data repositories
+									.content
+										%p Create open data repositories for at least 10% of the Universities of the World.
+							%h3.m-t Actions
+							%ul.accordion
+								%li
+									%h4.js-accordion-trigger Create open data repositories
+									.content
+										%p Create open data repositories for at least 10% of the Universities of the World.
+								%li
+									%h4.js-accordion-trigger Create open data repositories
+									.content
+										%p Create open data repositories for at least 10% of the Universities of the World.
+						.half-col
+							=image_tag 'photos/tabs-placeholder.png'
+			%li.tab
+				=link_to 'Agriculture', '#', class: 'tab-link'
+				.tab-content
+					Agriculture
+			%li.tab
+				=link_to 'Geoespacial', '#', class: 'tab-link'
+				.tab-content
+					Geoespacial
+			%li.tab
+				=link_to 'Utilities', '#', class: 'tab-link'
+				.tab-content
+					Utilities
+			%li.tab
+				=link_to 'Culture', '#', class: 'tab-link'
+				.tab-content
+					Culture
+			%li.tab
+				=link_to 'Transport', '#', class: 'tab-link'
+				.tab-content
+					Transport
 %section.community#community
 	.container
 		%h2.border Community
