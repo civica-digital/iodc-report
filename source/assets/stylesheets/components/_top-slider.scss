@@ -10,6 +10,7 @@
   }
   .slider{
     margin-top: 80px;
+    padding: 0 35px;
     .item{
       display: flex;
       padding: 30px;
@@ -26,5 +27,34 @@
         }
       }
     }
+    @media (min-width: 320px) and (max-width: 959px){
+      .item{
+        padding: 20px;
+        img{
+          max-width: 70px;
+        }
+        h4{
+          strong{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    @media (min-width: 320px) and (max-width: 779px){
+      .item{
+        display: block;
+        img{
+          display: block;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
+    }
+    @media (min-width: 320px) and (max-width: 479px){
+      .item{
+        display: block;
+      }
+    }
   }
 }
+
