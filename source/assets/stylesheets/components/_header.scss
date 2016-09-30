@@ -9,7 +9,7 @@ header {
     float: left;
     padding: 28px 30px 0 30px;
     img{
-      max-height: 90px;
+      max-height: 55px;
     }
   }
   nav{
@@ -36,7 +36,7 @@ header {
     .logo{
       padding-top: 10px;
       img{
-        max-height:  70px;
+        max-height: 40px;
       }
     }
     nav ul li a{
@@ -44,14 +44,14 @@ header {
     }
   }
 
-  @media (min-width: 780px) and (max-width: 959px){
+  @media (min-width: 780px) and (max-width: 1199px){
     nav ul li{
       padding-right: 40px;
       font-size: 15px;
     }
   }
-  @media (min-width: 320px) and (max-width: 779px){
-    height: 70px;
+  @media (min-width: 320px) and (max-width: 959px){
+    height: 75px;
     nav{
       display: none;
     }
