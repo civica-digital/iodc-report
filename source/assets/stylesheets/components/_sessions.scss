@@ -17,7 +17,13 @@
 				display: inline-block;
 			}
 			h3{
-				font-size: 28px;
+				font-size: 22px!important;
+			}
+			p{
+				font-size: 16px;
+			}
+			&:nth-child(2n+1){
+				clear: left;
 			}
 			@media (min-width: 320px) and (max-width: 779px){
 				width: 100%;

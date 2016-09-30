@@ -15,14 +15,15 @@ $red: #DC0833;
   .tab-link {
     display: inline-block;
     color: $red;
-    padding: 0 30px;
-    line-height: 67px;
-    font-family: 'Montserrat', sans-serif;
-    height: 75px;
-    font-weight: bold;
-    margin-right: 8px;
+    padding: 0 11px;
+    line-height: 59px;
+    font-family: 'Open Sans', sans-serif;
+    height: 65px;
+    margin-right: 3px;
     cursor: pointer;
-    border: 4px solid $red;
+    border: 3px solid $red;
+    font-size: 16px;
+    font-weight: 700;
     &:hover{
       background-color: $red;
       color: #fff!important;
@@ -43,12 +44,12 @@ $red: #DC0833;
       padding: 0 5px;
       line-height: 44px;
       height: 50px;
-      margin-right: 3px;
+      margin-right: 0px;
       border: 3px solid $red;
-      font-size: 15px;
+      font-size: 14px;
     }
   }
-  @media (min-width: 320px) and (max-width: 779px){
+  @media (min-width: 320px) and (max-width: 959px){
     .tab {
       display: block;
       width: 100%;
