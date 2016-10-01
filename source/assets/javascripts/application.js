@@ -33,6 +33,7 @@ $(document).ready(function(){
   }
 
   function build_query(keywords){
+    //Query de tipo AND, para OR, usar "," para separar elementos
     query = ""
     for (index in keywords){
       query = query + ":contains('"+keywords[index]+"')"
