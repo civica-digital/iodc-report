@@ -2,8 +2,8 @@
 	.container
 		%h2.border Actions
 		%h4 Pick a Track:
-		%ul.tabs
-			%li.tab
+		%ul.tabs#action_tabs
+			%li.tab#action_title
 				=link_to 'Charter', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -42,7 +42,7 @@
 										%p Coming Soon!
 						.half-col
 							=image_tag 'photos/tabs-placeholder.png'
-			%li.tab
+			%li.tab#action_title
 				=link_to 'Standards', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -78,7 +78,7 @@
 										%p Coming Soon!
 						.half-col
 							=image_tag 'photos/tabs-placeholder.png'
-			%li.tab
+			%li.tab#action_title
 				=link_to 'Innovation', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -117,7 +117,7 @@
 										%p Coming Soon!
 						.half-col
 							=image_tag 'photos/tabs-placeholder.png'
-			%li.tab
+			%li.tab#action_title
 				=link_to 'Capacity Building', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -154,7 +154,7 @@
 										%p Coming Soon!
 						.half-col
 							=image_tag 'photos/tabs-placeholder.png'
-			%li.tab
+			%li.tab#action_title
 				=link_to 'Measuring Impact', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -192,7 +192,7 @@
 										%p Coming Soon!
 						.half-col
 							=image_tag 'photos/tabs-placeholder.png'
-			%li.tab
+			%li.tab#action_title
 				=link_to 'Global Goals', '#', class: 'tab-link'
 				.tab-content
 					.cols

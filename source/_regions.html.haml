@@ -2,8 +2,8 @@
 	.container
 		%h2.border Regionals
 		%h4 Pick a Region:
-		%ul.tabs
-			%li.tab
+		%ul.tabs#region_tabs
+			%li.tab.region_title
 				=link_to 'Asia', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -15,7 +15,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'Africa', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -25,7 +25,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'LAC', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -37,7 +37,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'Europe', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -47,7 +47,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'East Europe', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -59,7 +59,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'North America', '#', class: 'tab-link'
 				.tab-content
 					.cols
@@ -69,7 +69,7 @@
 						.half-col
 							%h3 Projects
 							%p Coming Soon!
-			%li.tab
+			%li.tab.region_title
 				=link_to 'MENA Region', '#', class: 'tab-link'
 				.tab-content
 					.cols
