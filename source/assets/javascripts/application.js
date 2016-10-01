@@ -1,8 +1,71 @@
 //= require_tree .
 
-$(document).ready(function(){
 
-  $('#textsearch').selectize({
+$(document).ready(function(){
+  $.sessions = $(".sessions-content").html()
+  $.impact = $("#impact_tabs").html()
+  $.region = $("#region_tabs").html()
+  $.action = $("#action_tabs").html()
+
+  function activate_links(region){
+    $(region).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show()
+  }
+
+
+  function filter_section(section){
+    section_tabs = "#" + section + "_tabs"
+    section_title ="." + section + "_title"
+    section_data = $[section]
+
+    $(section_tabs).html(section_data)
+    $(section_tabs).html($(section_title+query))
+    activate_links(section_tabs)
+    console.log($(section_title))
+
+    if ($(section_title).length==0){
+      $(section_tabs).html("<h3>No results found.</h4>")
+    }
+  }
+
+  function build_query(keywords){
+    query = ""
+    for (index in keywords){
+      query = query + ":contains('"+keywords[index]+"')"
+    }
+    return query
+  }
+
+
+  function update_elements(keywords){
+    query = build_query(keywords)
+
+    $(".sessions-content").html($.sessions)
+    $(".sessions-content").html($(".session"+query))
+
+    if ($(".session"+query).length==0){
+      $(".sessions-content").html("<h3>No results found.</h4>")
+    }
+
+
+    filter_section("impact")
+    filter_section("region")
+    filter_section("action")
+
+    bind_click()
+
+  }
+
+  //accordions
+  function bind_click(){
+    $('.js-accordion-trigger').bind('click', function(e){
+      jQuery(this).parent().find('.content').slideToggle('fast');
+      jQuery(this).parent().toggleClass('is-expanded');
+      e.preventDefault();
+    });
+  }
+
+
+  keywordsSelect = $('#textsearch').selectize({
       delimiter: ',',
       persist: false,
       create: function(input) {
@@ -13,7 +76,15 @@ $(document).ready(function(){
       }
   });
 
+  var selectizeControl =  keywordsSelect[0].selectize
+
+  selectizeControl.on('change', function() {
+    selectedKeywords = selectizeControl.getValue().split(",");
+    update_elements(selectedKeywords)
+  });
+
   //navbar fixed
+
   var navbar = $('.navbar-static-top'),
       distance = navbar.offset().top,
       $window = $(window);
@@ -27,9 +98,6 @@ $(document).ready(function(){
           $("body").css("padding-top", "0px");
       }
   });
-
-  //
-
 
   $('.tabs').each(function(index) {
     $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
@@ -95,11 +163,5 @@ $(document).ready(function(){
   ]
   });
 
-  //accordions
-  $('.js-accordion-trigger').bind('click', function(e){
-    jQuery(this).parent().find('.content').slideToggle('fast');
-    jQuery(this).parent().toggleClass('is-expanded');
-    e.preventDefault();
-  });
-
+  bind_click()
 });
