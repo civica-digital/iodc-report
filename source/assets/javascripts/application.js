@@ -70,6 +70,21 @@ $(document).ready(function(){
     });
   }
 
+  function build_search_sentence(keywords){
+    console.log(keywords)
+    text = "Showing data for"
+    for (keyword in keywords){
+      if (keyword > 0){
+        text = text + ","
+      }
+      text = text + " "+ keywords[keyword]
+    }
+    if (keywords[0] == ""){
+      text = ""
+    }
+    return text
+  }
+
 
   keywordsSelect = $('#textsearch').selectize({
       delimiter: ',',
@@ -87,6 +102,7 @@ $(document).ready(function(){
   selectizeControl.on('change', function() {
     selectedKeywords = selectizeControl.getValue().split(",");
     update_elements(selectedKeywords)
+    $(".showing").text(build_search_sentence(selectedKeywords))
   });
 
   //navbar fixed
