@@ -1,0 +1,9 @@
+ul.buzz li {
+  margin-bottom: 20px; }
+  ul.buzz li p {
+    margin-bottom: 0; }
+    ul.buzz li p i {
+      color: #DC0833; }
+  ul.buzz li .date {
+    font-size: 14px;
+    opacity: .6; }
