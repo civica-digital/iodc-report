@@ -186,4 +186,6 @@ $(document).ready(function(){
   });
 
   bind_click()
+
+  $("#session-info").animatedModal();
 });
