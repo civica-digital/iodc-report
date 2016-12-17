@@ -189,3 +189,9 @@ $(document).ready(function(){
 
   $("#session-info").animatedModal();
 });
+
+function fill_data(json_file){
+  $.getJSON("assets/javascripts/data/"+json_file, function(json) {
+    $( "#data_title" ).text(json["name"]);
+  })
+}
