@@ -986,6 +986,13 @@ footer {
           padding-left: 0px;
           padding-right: 20px; } }
 
+.extra-info #animatedModal {
+  margin-left: 10% !important;
+  margin-top: 10% !important;
+  width: 80% !important;
+  height: 80% !important;
+  background-color: #AAA !important; }
+
 html {
   box-sizing: border-box; }
 
