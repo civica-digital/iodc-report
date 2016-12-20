@@ -1,14 +1,20 @@
 .extra-info {
   #animatedModal{
-    margin-left: 10% !important;
+    margin-left: 5% !important;
     margin-top: 10% !important;
-    width: 80% !important;
-    height: 80% !important;
-    padding: 80px 40px 40px 30px;
+    width: 90% !important;
+    height: 90% !important;
+    padding: 80px 40px 40px 40px;
+    border-radius: 5px;
+    @media (min-width: 320px) and (max-width: 779px){
+      padding: 80px 10px 40px 10px;
+    }
     .modal-content {
       h4 {
         color: $medium-gray;
         display: inline-block;
+        margin: 0;
+        font-size: 18px;
       }
       h2 {
         color: $red;
@@ -29,17 +35,25 @@
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
-        height: 400px;
-        @media (min-width: 320px) and (max-width: 779px){
+        height: 320px;
+        @media (min-width: 320px) and (max-width: 1200px){
+          height: auto;
           .video-embebed, .mini-gallery {
-            margin: 0 0 30px 0;
-            width: 100%;
+            margin: 0 0 30px 0 !important;
+            width: 100% !important;
+            float: none !important;
+          }
+          .video-embebed {
+            padding-bottom: 56.25% !important;
+            position: relative;
+            iframe {
+            position: absolute;
+            }
           }
         }
         .video-embebed {
           width: calc(60% - 40px);
           margin: 0 40px 0 0;
-          height: 100%;
           iframe {
             width: 100%;
             height: 100%;
@@ -50,17 +64,22 @@
           float: right;
           height: 100%;
           overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          aling-items: center;
+          align-content: space-around;
+
           .left-img {
             width: 50%;
             padding-right: 15px;
             float: left;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
           }
           .right-img {
             width: 50%;
             padding-left: 15px;
             float: right;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
           }
           img {
             display: block;
@@ -72,27 +91,30 @@
       }
       .conference-feed {
         margin-top: 20px;
-        .slider{
-          margin: 0 35px;
+        .slider-two{
           .item {
-            width: 95%;
-            padding: 30px;
-            h5, h4 {
-              display: inline;
+            display: flex;
+            padding: 0 15px 0 30px;
+            @media (min-width: 320px) and (max-width: 779px){
+              padding: 0 28px;
+              .square {
+                display: none;
+              }
             }
-            h5 {
-              font-weight: regular;
+            .item-info {
+              h5, h4 {
+                display: inline;
+              }
+              h5 {
+                font-weight: regular;
+              }
             }
-            span.square {
-              height: 20px;
-              width: 30px;
+            .square {
+              height: 15px;
+              width: 20px;
               background-color: $red;
-              margin-right: 20px;
+              margin: 5px 15px 0 5px;
             }
-            .strong {
-              font-weight: 600px;
-            }
-
           }
         }
       }
