@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>message [#1578]</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12.344,0 L7.657,0 C3.428,0 0,3.26075535 0,7.47422529 C0,11.6876952 3.428,14.9484506 7.657,14.9484506 L11.907,14.9484506 L15.885,19.1708896 C17.643,20.922848 20,19.6382778 20,17.7288624 L20,7.83398467 C20,3.61951817 16.546,0 12.318,0 L12.344,0 Z M12.172,2.09477621 C15.291,2.09477621 18,4.72570351 18,7.83398467 L18,17.7288624 C18,18.0936046 17.564,18.2829516 17.299,18.0188623 C12.718,13.1566296 13.493,14.0445676 12.735,12.9553238 L7.657,12.9553238 C4.538,12.9553238 2,10.5825065 2,7.47422529 C2,4.36594413 4.538,1.99312674 7.657,1.99312674 L12,1.99312674 L12.172,2.09477621 Z" id="message-[#1578]" fill="#F30D0D"></path>
+    </g>
+</svg>
