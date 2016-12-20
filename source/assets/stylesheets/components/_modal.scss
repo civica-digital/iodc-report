@@ -1,10 +1,101 @@
 .extra-info {
-
   #animatedModal{
     margin-left: 10% !important;
     margin-top: 10% !important;
     width: 80% !important;
     height: 80% !important;
-    background-color: #AAA !important;
+    padding: 80px 40px 40px 30px;
+    .modal-content {
+      h4 {
+        color: $medium-gray;
+        display: inline-block;
+      }
+      h2 {
+        color: $red;
+      }
+      h5 {
+        display: inline;
+        font-weight: 100;
+      }
+      a {
+        text-decoration: underline;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      .speakers-list {
+        margin-top: 20px;
+      }
+      .multimedia {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        height: 400px;
+        @media (min-width: 320px) and (max-width: 779px){
+          .video-embebed, .mini-gallery {
+            margin: 0 0 30px 0;
+            width: 100%;
+          }
+        }
+        .video-embebed {
+          width: calc(60% - 40px);
+          margin: 0 40px 0 0;
+          height: 100%;
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .mini-gallery {
+          width: 40%;
+          float: right;
+          height: 100%;
+          overflow: hidden;
+          .left-img {
+            width: 50%;
+            padding-right: 15px;
+            float: left;
+            margin-bottom: 30px;
+          }
+          .right-img {
+            width: 50%;
+            padding-left: 15px;
+            float: right;
+            margin-bottom: 30px;
+          }
+          img {
+            display: block;
+            padding:0!important;
+            margin: 0!important;
+            max-width: 100%;
+          }
+        }
+      }
+      .conference-feed {
+        margin-top: 20px;
+        .slider{
+          margin: 0 35px;
+          .item {
+            width: 95%;
+            padding: 30px;
+            h5, h4 {
+              display: inline;
+            }
+            h5 {
+              font-weight: regular;
+            }
+            span.square {
+              height: 20px;
+              width: 30px;
+              background-color: $red;
+              margin-right: 20px;
+            }
+            .strong {
+              font-weight: 600px;
+            }
+
+          }
+        }
+      }
+    }
   }
 }

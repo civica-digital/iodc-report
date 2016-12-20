@@ -185,6 +185,13 @@ $(document).ready(function(){
   ]
   });
 
+  $(".slider-two").slick({
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
+
   bind_click()
 
   $("#session-info").animatedModal();
