@@ -22,7 +22,7 @@
             left:'0px', 
             zIndexIn: '9999',  
             zIndexOut: '-9999',  
-            color: '#39BEB9', 
+            color: '#efefef', 
             opacityIn:'1',  
             opacityOut:'0', 
             animatedIn:'zoomIn',
@@ -3202,6 +3202,13 @@ $(document).ready(function(){
       }
     }
   ]
+  });
+
+  $(".slider-two").slick({
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   });
 
   bind_click()
