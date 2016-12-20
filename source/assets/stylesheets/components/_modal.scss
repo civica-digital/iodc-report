@@ -1,10 +1,122 @@
 .extra-info {
-
   #animatedModal{
-    margin-left: 10% !important;
+    margin-left: 5% !important;
     margin-top: 10% !important;
-    width: 80% !important;
-    height: 80% !important;
-    background-color: #AAA !important;
+    width: 90% !important;
+    height: 90% !important;
+    padding: 80px 40px 40px 40px;
+    border-radius: 5px;
+    @media (min-width: 320px) and (max-width: 779px){
+      padding: 80px 10px 40px 10px;
+    }
+    .modal-content {
+      h4 {
+        color: $medium-gray;
+        display: inline-block;
+        margin: 0;
+        font-size: 18px;
+      }
+      h2 {
+        color: $red;
+      }
+      h5 {
+        display: inline;
+        font-weight: 100;
+      }
+      a {
+        text-decoration: underline;
+        display: inline-block;
+        margin: 0 5px;
+      }
+      .speakers-list {
+        margin-top: 20px;
+      }
+      .multimedia {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        height: 320px;
+        @media (min-width: 320px) and (max-width: 1200px){
+          height: auto;
+          .video-embebed, .mini-gallery {
+            margin: 0 0 30px 0 !important;
+            width: 100% !important;
+            float: none !important;
+          }
+          .video-embebed {
+            padding-bottom: 56.25% !important;
+            position: relative;
+            iframe {
+            position: absolute;
+            }
+          }
+        }
+        .video-embebed {
+          width: calc(60% - 40px);
+          margin: 0 40px 0 0;
+          iframe {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .mini-gallery {
+          width: 40%;
+          float: right;
+          height: 100%;
+          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+
+          .left-img {
+            width: 50%;
+            padding-right: 15px;
+            float: left;
+            margin-bottom: 15px;
+          }
+          .right-img {
+            width: 50%;
+            padding-left: 15px;
+            float: right;
+            margin-bottom: 15px;
+          }
+          img {
+            display: block;
+            padding:0!important;
+            margin: 0!important;
+            max-width: 100%;
+          }
+        }
+      }
+      .conference-feed {
+        margin-top: 20px;
+        .slider-two{
+          .item {
+            display: flex;
+            padding: 0 15px 0 30px;
+            @media (min-width: 320px) and (max-width: 779px){
+              padding: 0 28px;
+              .square {
+                display: none;
+              }
+            }
+            .item-info {
+              h5, h4 {
+                display: inline;
+              }
+              h5 {
+                font-weight: regular;
+              }
+            }
+            .square {
+              height: 15px;
+              width: 20px;
+              background-color: $red;
+              margin: 5px 15px 0 5px;
+            }
+          }
+        }
+      }
+    }
   }
 }

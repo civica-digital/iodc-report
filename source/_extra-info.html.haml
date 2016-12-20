@@ -1,7 +1,47 @@
 %section.extra-info
-	#animatedModal
-		.close-animatedModal
-			%h1 CLOSE MODAL
-			%h2#data_title
-		.modal-content
-			CLOSE MODAL
+  #animatedModal
+    .close-animatedModal
+      .close-icon
+    .modal-content
+      %h4 Description:
+      %h5 This was the most awesome conference of all, don't let the description of other conferences tell you otherwise.
+      =link_to 'Go to Notes', ''
+      .speakers-list
+        %h4 Speakers:
+        =link_to 'Javier Hernández-Roz', '#'
+        =link_to 'Naser Faruqui', '#'
+        =link_to 'Haishan Fu', '#'
+        =link_to 'Luis Cueto', '#'
+        =link_to 'Victor Calvo-Sotelo', '#'
+      .multimedia
+        .video-embebed
+          %iframe{allowfullscreen:'', frameborder: '0', src:'https://www.youtube.com/embed/4wpU8kFC-V0'}
+        .mini-gallery
+          .left-img=image_tag 'photos/photo2.png'
+          .right-img=image_tag 'photos/photo3.png'
+          .left-img=image_tag 'photos/photo3.png'
+          .right-img=image_tag 'photos/photo2.png'
+      .conference-feed
+        %h2 Buzz
+        .slider-two
+          .item
+            .square
+            .item-info
+              %h4 #IODC16
+              %h5 Agenda is finally live! Start scheduling your sessions
+              =link_to 'http://opendatacon.org/agenda/'
+              %h4 '#opendata'
+          .item
+            .square
+            .item-info
+              %h4 #IODC16
+              %h5 Agenda is finally live! Start scheduling your sessions
+              =link_to 'http://opendatacon.org/agenda/'
+              %h4 '#opendata'
+          .item
+            .square
+            .item-info
+              %h4 #IODC16
+              %h5 Agenda is finally live! Start scheduling your sessions
+              =link_to 'http://opendatacon.org/agenda/'
+              %h4 '#opendata'
