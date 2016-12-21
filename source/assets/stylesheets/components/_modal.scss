@@ -6,9 +6,6 @@
     height: 84% !important;
     padding: 60px 40px 40px 40px;
     border-radius: 5px;
-    @media (min-width: 320px) and (max-width: 779px){
-      padding: 60px 10px 40px 10px;
-    }
     .modal-content {
       h4 {
         color: $medium-gray;
@@ -30,26 +27,14 @@
       }
       .speakers-list {
         margin-top: 20px;
+        h4, .speaker-section {
+          display: inline;
+        }
       }
       .multimedia {
         display: flex;
         flex-wrap: wrap;
         margin-top: 20px;
-        @media (min-width: 320px) and (max-width: 940px){
-          height: auto;
-          .video-embebed, .mini-gallery {
-            margin: 0 0 30px 0 !important;
-            width: 100% !important;
-            float: none !important;
-          }
-          .video-embebed {
-            padding-bottom: 56.25% !important;
-            position: relative;
-            iframe {
-            position: absolute;
-            }
-          }
-        }
         .video-embebed {
           width: calc(60% - 60px);
           margin: 0 60px 0 0;
@@ -63,16 +48,27 @@
           float: right;
           height: 100%;
           overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
 
           .top-left-img {
             width: calc(50% - 10px);
             float: left;
             margin-bottom: 15px;
+            a {
+              float: left;
+              margin: 0;
+            }
           }
           .top-right-img {
             width: calc(50% - 10px);
             float: right;
             margin-bottom: 15px;
+            a {
+              float: right;
+              margin: 0;
+            }
           }
 
           .bottom-left-img {
@@ -97,22 +93,25 @@
           margin: 0;
         }
         .slider-two{
+          .slick-track{
+            display:flex;
+            align-items: center;
+          }
+          button {
+            z-index: 2;
+          }
           .item {
             display: flex;
             padding: 0 15px 0 30px;
-            @media (min-width: 320px) and (max-width: 779px){
-              padding: 0 28px;
-              .square {
-                display: none;
-              }
-            }
             .item-info {
+              width: calc(100% - 50px);
               h5, h4 {
                 display: inline;
               }
               h5 {
                 font-weight: regular;
               }
+              p {margin: 0;}
             }
             .square {
               height: 15px;
@@ -122,6 +121,43 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 779px){
+  .extra-info #animatedModal{
+    padding: 60px 10px 40px 10px;
+    .modal-content .conference-feed .slider-two .item {
+      padding: 0 28px 0 32px;
+      .square {
+        display: none;
+      }
+      .item-info {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 940px){
+  .extra-info #animatedModal .modal-content .multimedia {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    height: auto;
+    .video-embebed, .mini-gallery {
+      margin: 0 0 30px 0 !important;
+      width: 100% !important;
+      float: none !important;
+    }
+    .video-embebed {
+      padding-bottom: 56.25% !important;
+      position: relative;
+      iframe {
+        position: absolute;
       }
     }
   }
