@@ -57,18 +57,10 @@ $(document).ready(function(){
     filter_section("region")
     filter_section("action")
 
-    bind_click()
+    $(".session-info").animatedModal();
 
   }
 
-  //accordions
-  function bind_click(){
-    $('.js-accordion-trigger').bind('click', function(e){
-      jQuery(this).parent().find('.content').slideToggle('fast');
-      jQuery(this).parent().toggleClass('is-expanded');
-      e.preventDefault();
-    });
-  }
 
   function build_search_sentence(keywords){
     console.log(keywords)
@@ -185,14 +177,20 @@ $(document).ready(function(){
   ]
   });
 
-  bind_click()
 
-  $("#session-info").animatedModal();
+  $(".slider-two").slick({
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  });
+
+  $(".session-info").animatedModal();
 });
 
 function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
-    console.log("json")
+
     description = json["session"]["description"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
@@ -202,40 +200,33 @@ function fill_data(json_file){
 
     description_section = "<h4>Description:</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
 
+    youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
+
+    image_sections = ['','','','']
+
+    for (i in photos){
+      image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
+    }
+
     speakers_section = ""
     for (i in speakers) {
       speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
     }
 
-    youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
 
-    topleftimg_section = '<a href="'+photos[0]["url"]+'"><img src="https://' + photos[0]["file"]+ '"></a>'
-    toprightimg_section = '<a href="'+photos[1]["url"]+'"><img src="https://' + photos[1]["file"]+ '"></a>'
-    bottomleftimg_section = '<a href="'+photos[2]["url"]+'"><img src="https://' + photos[2]["file"]+ '"></a>'
-    bottomrightimg_section = '<a href="'+photos[3]["url"]+'"><img src="https://' + photos[3]["file"]+ '"></a>'
-
-
-    tweets_section = ""
-    for (i in tweets) {
-      tweets_section = tweets_section + '<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>'
-    }
-
-
-    console.log(description)
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
     $( ".video-embebed" ).html(youtube_section)
-    $( ".top-left-img" ).html(topleftimg_section)
-    $( ".top-right-img" ).html(toprightimg_section)
-    $( ".bottom-left-img" ).html(bottomleftimg_section)
-    $( ".bottom-right-img" ).html(bottomrightimg_section)
-    $( ".slider-two" ).html(tweets_section)
+    $( ".top-left-img" ).html(image_sections[0])
+    $( ".top-right-img" ).html(image_sections[1])
+    $( ".bottom-left-img" ).html(image_sections[2])
+    $( ".bottom-right-img" ).html(image_sections[3])
 
-    $(".slider-two").slick({
-      dots: false,
-      infinite: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    });
+    $('.slider-two').slick('removeSlide', null, null, true);
+
+    for (i in tweets) {
+      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+    }
+
   })
 };
