@@ -6,10 +6,6 @@
     font-weight: normal;
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    &:after {
-      content: url(../images/icons/arrow-bottom.svg);
-      margin-left: 20px;
-    }
   }
 
   .content {
@@ -17,11 +13,4 @@
     padding: 10px 0;
   }
 
-  .is-expanded {
-    > h4:after {
-      content: url(../images/icons/arrow-top.svg);
-    }
-
-    display: block;
-  }
 }
