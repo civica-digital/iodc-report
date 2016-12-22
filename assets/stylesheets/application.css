@@ -788,15 +788,45 @@ header {
   background-clip: content-box; }
 
 .cols {
-  overflow: hidden;
-  margin-top: 40px; }
+  overflow: hidden; }
   .cols .half-col {
+    margin-top: 40px;
     width: 50%;
     float: left;
     padding-right: 30px; }
     .cols .half-col:last-child {
       padding-right: 0;
       padding-left: 30px; }
+  .cols .seventy-col {
+    margin-top: 0px;
+    width: 70%;
+    float: right;
+    padding-right: 30px; }
+    .cols .seventy-col:last-child {
+      padding-right: 0;
+      padding-left: 30px; }
+  .cols .thirty-col {
+    margin-top: 0px;
+    width: 30%;
+    float: left;
+    padding-right: 30px; }
+    .cols .thirty-col:last-child {
+      padding-right: 0;
+      padding-left: 30px; }
+  .cols .grid {
+    display: inline-block; }
+  .cols .row {
+    display: inline-block; }
+  .cols .box-wide {
+    margin-top: 0px;
+    width: 55%;
+    float: right;
+    padding-right: 30px; }
+  .cols .box-small {
+    margin-top: 0px;
+    width: 35%;
+    float: right;
+    padding-right: 30px; }
   @media (min-width: 320px) and (max-width: 779px) {
     .cols .half-col {
       width: 100%;
@@ -914,6 +944,9 @@ header {
   padding-top: 120px;
   margin-top: -90px;
   background-clip: content-box; }
+  .community .tab-content {
+    margin-top: 30px;
+    margin-bottom: 30px; }
 
 ul.buzz li {
   margin-bottom: 20px; }
@@ -924,54 +957,6 @@ ul.buzz li {
   ul.buzz li .date {
     font-size: 14px;
     opacity: .6; }
-
-.gallery {
-  overflow: hidden;
-  padding: 20px 0 60px 0; }
-  .gallery img {
-    display: block;
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 100%; }
-  .gallery .h2-w1 {
-    float: left;
-    width: 50%;
-    padding-right: 10px; }
-  .gallery .h1-w1 {
-    float: left;
-    margin-bottom: 20px;
-    width: 50%;
-    padding-left: 10px; }
-  .gallery .bg {
-    position: relative; }
-    .gallery .bg blockquote {
-      color: #fff;
-      position: absolute;
-      text-align: center;
-      padding-right: 10px;
-      font-size: 30px;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: bold;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-      width: 100%;
-      margin: 0; }
-      .gallery .bg blockquote span {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        display: block; }
-  @media (min-width: 320px) and (max-width: 779px) {
-    .gallery .h2-w1 {
-      width: 100%;
-      padding-right: 0px;
-      margin-bottom: 20px; }
-    .gallery .h1-w1 {
-      width: 100%;
-      padding-left: 0px; }
-    .gallery img {
-      width: 100%; } }
 
 footer {
   background-color: #DC0833;
