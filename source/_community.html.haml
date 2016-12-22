@@ -1,42 +1,49 @@
 %section.community#community
 	.container
 		%h2.border Community
+		%h4 Pick an Event:
 		.gallery
-			.h2-w1.bg
-				=image_tag 'photos/photo1.png'
-				%blockquote
-					“Coming Soon!”
-					%span - Paulina
-
-			.h1-w1
-				=image_tag 'photos/photo2.png'
-			.h1-w1
+			.cols
+				.thirty-col
+					%ul.tabs#community_tabs
+						%li.tab.community_title
+							=link_to 'Pre-events', '#', class: 'tab-link'
+							.tab-content
+								%ul.accordion
+									%li
+										%h4 Open Cities Summit
+									%li
+										%h4 Unconference
+									%li
+										%h4 My best Open Data Fail
+									%li
+										%h4 OD4D
+						%li.tab.community_title
+							=link_to 'Talks', '#', class: 'tab-link'
+							.tab-content
+								%ul.accordion
+									%li
+										%h4 Open Cities Summit 2
+									%li
+										%h4 Unconference
+									%li
+										%h4 My best Open Data Fail
+									%li
+										%h4 OD4D
+				.seventy-col
+					.h1-w2
+						=image_tag 'photos/photo4.png'
+		.cols
+			.half-col
+				.row
+					.box-wide
+						=image_tag 'photos/photo3.png'
+					.box-small
+						=image_tag 'photos/photo3.png'
+				.row
+					.box-small
+						=image_tag 'photos/photo3.png'
+					.box-wide
+						=image_tag 'photos/photo3.png'
+			.half-col
 				=image_tag 'photos/photo3.png'
-			.h1-w2
-				=image_tag 'photos/photo4.png'
-
-		%ul.wide-accordion
-			%li
-				%h4.js-accordion-trigger The buzz
-				.content
-					%ul.buzz
-						%li
-							%p
-								%i.fa.fa-twitter
-								%strong #IODC16
-								Agenda is finally live!! Start scheduling your sessions
-								=link_to 'http://opendatacon.org/agenda/', '#'
-								'#opendata'
-							.date 1 hour ago
-			%li
-				%h4.js-accordion-trigger Open Cities Summit
-				.content Coming Soon!
-			%li
-				%h4.js-accordion-trigger Unconference
-				.content Coming Soon!
-			%li
-				%h4.js-accordion-trigger My Best Open Data Fail
-				.content Coming Soon!
-			%li
-				%h4.js-accordion-trigger OD4D
-				.content Coming Soon!
