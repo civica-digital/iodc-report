@@ -1,7 +1,7 @@
 .cols {
   overflow: hidden;
-  margin-top: 40px;
   .half-col{
+    margin-top: 40px;
     width: 50%;
     float: left;
     padding-right: 30px;
@@ -9,6 +9,44 @@
       padding-right: 0;
       padding-left: 30px;
     }
+  }
+  .seventy-col{
+    margin-top:0px;
+    width: 70%;
+    float: right;
+    padding-right: 30px;
+    &:last-child{
+      padding-right: 0;
+      padding-left: 30px;
+    }
+  }
+  .thirty-col{
+    margin-top:0px;
+    width: 30%;
+    float: left;
+    padding-right: 30px;
+    &:last-child{
+      padding-right: 0;
+      padding-left: 30px;
+    }
+  }
+  .grid{
+    display:inline-block;
+  }
+  .row{
+    display:inline-block;
+  }
+  .box-wide{
+    margin-top:0px;
+    width: 55%;
+    float: right;
+    padding-right: 30px;
+  }
+  .box-small{
+    margin-top:0px;
+    width: 35%;
+    float: right;
+    padding-right: 30px;
   }
   @media (min-width: 320px) and (max-width: 779px){
     .half-col{
