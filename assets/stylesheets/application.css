@@ -842,6 +842,8 @@ header {
 .accordion .content {
   display: none;
   padding: 10px 0; }
+.accordion .sections-text {
+  color: #000 !important; }
 
 .wide-accordion .js-accordion-trigger {
   cursor: pointer; }
@@ -916,6 +918,24 @@ header {
       background-color: #DC0833;
       color: #fff !important; }
     .tabs .tab-link.is-active {
+      background-color: #DC0833;
+      color: #fff; }
+  .tabs .tab-link-inactive {
+    display: inline-block;
+    color: #DC0833;
+    padding: 0 11px;
+    line-height: 59px;
+    font-family: 'Open Sans', sans-serif;
+    height: 65px;
+    margin-right: 3px;
+    cursor: pointer;
+    border: 3px solid #DC0833;
+    font-size: 16px;
+    font-weight: 700; }
+    .tabs .tab-link-inactive:hover {
+      background-color: #DC0833;
+      color: #fff !important; }
+    .tabs .tab-link-inactive.is-active {
       background-color: #DC0833;
       color: #fff; }
   .tabs .tab-content {
