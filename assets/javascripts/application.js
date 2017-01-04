@@ -3024,17 +3024,22 @@ jQuery.expr[':'].contains = function(a, i, m) {
       .indexOf(m[3].toUpperCase()) >= 0;
 };
 
-
 $(document).ready(function(){
   $.sessions = $(".sessions-content").html()
   $.impact = $("#impact_tabs").html()
   $.region = $("#region_tabs").html()
   $.action = $("#action_tabs").html()
+  $.community = $("#community_tabs").html()
 
   function activate_links(region){
-    $(region).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show()
+    $(region).children('li')
+      .first()
+      .children('a')
+      .addClass('is-active')
+      .next()
+      .addClass('is-open')
+      .show()
   }
-
 
   function filter_section(section){
     section_tabs = "#" + section + "_tabs"
@@ -3043,12 +3048,11 @@ $(document).ready(function(){
 
     $(section_tabs).html(section_data)
     $(section_tabs).html($(section_title+query))
-    activate_links(section_tabs)
-    console.log($(section_title))
 
     if ($(section_title).length==0){
-      $(section_tabs).html("<h3>No results found.</h4>")
+      $(section_tabs).html("<h3>No results found.</h3>")
     }
+    activate_links(section_tabs)
   }
 
   function build_query(keywords){
@@ -3068,16 +3072,24 @@ $(document).ready(function(){
     $(".sessions-content").html($(".session"+query))
 
     if ($(".session"+query).length==0){
-      $(".sessions-content").html("<h3>No results found.</h4>")
+      $(".sessions-content").html("<h3>No results found.</h3>")
     }
 
 
     filter_section("impact")
     filter_section("region")
     filter_section("action")
+    filter_section("community")
 
-    $(".session-info").animatedModal();
-
+    setTimeout(function(){
+      console.log("Filter timeout flag.")
+      $(".session-info").animatedModal();
+      $("#impact_tabs").animatedModal();
+      $("#region_tabs").animatedModal();
+      $("#action_tabs").animatedModal();
+      $("#community_tabs").animatedModal();
+    },0)
+    //$(".session-info").animatedModal();
   }
 
 
@@ -3205,6 +3217,11 @@ $(document).ready(function(){
   });
 
   $(".session-info").animatedModal();
+  $("#impact_tabs").animatedModal();
+  $("#region_tabs").animatedModal();
+  $("#action_tabs").animatedModal();
+  $("#community_tabs").animatedModal();
+
 });
 
 function fill_data(json_file){
@@ -3228,10 +3245,14 @@ function fill_data(json_file){
     }
 
     speakers_section = ""
+
+    if (speakers.length > 0) {
+      speakers_section = "<h4>Speakers:</h4>"
+    }
     for (i in speakers) {
       speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
     }
-
+    console.log("tested")
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
