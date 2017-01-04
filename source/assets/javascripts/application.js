@@ -16,9 +16,9 @@ $(document).ready(function(){
     $(region).children('li')
       .first()
       .children('a')
-      .addClass('is-active')
+      .addClass('tab-active')
       .next()
-      .addClass('is-open')
+      .addClass('tab-open')
       .show()
   }
 
@@ -63,7 +63,7 @@ $(document).ready(function(){
     filter_section("community")
 
     setTimeout(function(){
-      console.log("Filter timeout flag.")
+      console.log("Filter Timeout Flag.")
       $(".session-info").animatedModal();
       $("#impact_tabs").animatedModal();
       $("#region_tabs").animatedModal();
