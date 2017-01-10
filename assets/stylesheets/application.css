@@ -1112,11 +1112,10 @@ footer {
           font-weight: regular; }
         .extra-info #animatedModal .modal-content .conference-feed .slider-two .item .item-info p {
           margin: 0; }
-      .extra-info #animatedModal .modal-content .conference-feed .slider-two .item .square {
-        height: 15px;
+      .extra-info #animatedModal .modal-content .conference-feed .slider-two .item .twitter-icon {
+        height: 20px;
         width: 20px;
-        background-color: #DC0833;
-        margin: 5px 15px 0 5px; }
+        margin: 5px 5px 0 5px; }
 
 @media (min-width: 320px) and (max-width: 779px) {
   .extra-info #animatedModal {
