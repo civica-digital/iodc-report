@@ -3020,6 +3020,94 @@ jQuery.expr[':'].contains = function(a, i, m) {
       .indexOf(m[3].toUpperCase()) >= 0;
 };
 
+function UpdateQueryString(key, value, url) {
+    if (!url) url = window.location.href;
+    var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),
+        hash;
+
+    if (re.test(url)) {
+        if (typeof value !== 'undefined' && value !== null)
+            return url.replace(re, '$1' + key + "=" + value + '$2$3');
+        else {
+            hash = url.split('#');
+            url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+                url += '#' + hash[1];
+            return url;
+        }
+    }
+    else {
+        if (typeof value !== 'undefined' && value !== null) {
+            var separator = url.indexOf('?') !== -1 ? '&' : '?';
+            hash = url.split('#');
+            url = hash[0] + separator + key + '=' + value;
+            if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+                url += '#' + hash[1];
+            return url;
+        }
+        else
+            return url;
+    }
+}
+
+function fill_data(json_file){
+  $.getJSON("assets/javascripts/data/"+json_file, function(json) {
+
+    description = json["session"]["description"]
+    notes = json["notes"]
+    speakers = json["session"]["speakers"]
+    youtube_id = json["youtube"]
+    photos = json["photos"]
+    tweets = json["tweets"]
+
+    description_section = "<h4>Description:</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
+
+    youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
+
+    image_sections = ['','','','']
+
+    for (i in photos){
+      image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
+    }
+
+    speakers_section = ""
+
+    if (speakers.length > 0) {
+      speakers_section = "<h4>Speakers:</h4>"
+    }
+    for (i in speakers) {
+      speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
+    }
+    console.log("tested")
+
+    $( ".session-description" ).html(description_section);
+    $( ".speaker-section" ).html(speakers_section)
+    $( ".video-embebed" ).html(youtube_section)
+    $( ".top-left-img" ).html(image_sections[0])
+    $( ".top-right-img" ).html(image_sections[1])
+    $( ".bottom-left-img" ).html(image_sections[2])
+    $( ".bottom-right-img" ).html(image_sections[3])
+
+    $('.slider-two').slick('removeSlide', null, null, true);
+
+    for (i in tweets) {
+      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+    }
+
+    $('#animatedModal')
+      .removeClass('animatedModal-off')
+      .addClass('animated animatedModal-on zoomIn')
+      .css({"z-index":"9999","opacity":"1"})
+
+    window.history.pushState("", "", "?talk="+json_file.split(".json")[0]);
+
+  })
+};
+
+function close_modal(){
+  window.history.pushState("", "", "?");
+}
+
 $(document).ready(function(){
   $.sessions = $(".sessions-content").html()
   $.impact = $("#impact_tabs").html()
@@ -3218,51 +3306,12 @@ $(document).ready(function(){
   $("#action_tabs").animatedModal();
   $("#community_tabs").animatedModal();
 
+  var url = window.location.href; // or window.location.href for current url
+  var captured = /talk=([^&]+)/.exec(url)[1]; // Value is in [1] ('384' in our case)
+  var result = captured ? captured : 'defaultValue';
+
+  if (captured != 'defaultValue'){
+    fill_data(captured+".json")
+  }
+
 });
-
-function fill_data(json_file){
-  $.getJSON("assets/javascripts/data/"+json_file, function(json) {
-
-    description = json["session"]["description"]
-    notes = json["notes"]
-    speakers = json["session"]["speakers"]
-    youtube_id = json["youtube"]
-    photos = json["photos"]
-    tweets = json["tweets"]
-
-    description_section = "<h4>Description:</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
-
-    youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
-
-    image_sections = ['','','','']
-
-    for (i in photos){
-      image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
-    }
-
-    speakers_section = ""
-
-    if (speakers.length > 0) {
-      speakers_section = "<h4>Speakers:</h4>"
-    }
-    for (i in speakers) {
-      speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
-    }
-    console.log("tested")
-
-    $( ".session-description" ).html(description_section);
-    $( ".speaker-section" ).html(speakers_section)
-    $( ".video-embebed" ).html(youtube_section)
-    $( ".top-left-img" ).html(image_sections[0])
-    $( ".top-right-img" ).html(image_sections[1])
-    $( ".bottom-left-img" ).html(image_sections[2])
-    $( ".bottom-right-img" ).html(image_sections[3])
-
-    $('.slider-two').slick('removeSlide', null, null, true);
-
-    for (i in tweets) {
-      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
-    }
-
-  })
-};
