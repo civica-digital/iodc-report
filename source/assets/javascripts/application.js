@@ -76,7 +76,7 @@ function fill_data(json_file){
     $('.slider-two').slick('removeSlide', null, null, true);
 
     for (i in tweets) {
-      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="twitter-icon"><img src= "assets/images/icons/twitter-red.png"></img></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
     }
 
     $('#animatedModal')
