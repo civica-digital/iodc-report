@@ -37,7 +37,6 @@ function UpdateQueryString(key, value, url) {
 
 function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
-
     name = json["name"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
