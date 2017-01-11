@@ -3053,6 +3053,7 @@ function UpdateQueryString(key, value, url) {
 function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
 
+    name = json["name"]
     description = json["session"]["description"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
@@ -3060,7 +3061,7 @@ function fill_data(json_file){
     photos = json["photos"]
     tweets = json["tweets"]
 
-    description_section = "<h4>Description:&nbsp;</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
+    description_section = "<h2>"+name+"</h2><h4>Description:&nbsp;</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
