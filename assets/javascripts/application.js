@@ -3063,11 +3063,11 @@ function fill_data(json_file){
     description_section = "<h4>Description:</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
-
     image_sections = ['','','','']
-
+    var photoCount = 0;
     for (i in photos){
       image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
+      photoCount ++;
     }
 
     speakers_section = ""
@@ -3078,20 +3078,28 @@ function fill_data(json_file){
     for (i in speakers) {
       speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
     }
-    console.log("tested")
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
-    $( ".video-embebed" ).html(youtube_section)
-    $( ".top-left-img" ).html(image_sections[0])
-    $( ".top-right-img" ).html(image_sections[1])
-    $( ".bottom-left-img" ).html(image_sections[2])
-    $( ".bottom-right-img" ).html(image_sections[3])
-
+    if(youtube_id != ""){
+      $(".video-embebed").show()
+      $( ".video-embebed").html(youtube_section)
+    }else {
+      $(".video-embebed").hide()
+    }
+    if(photoCount > 0) {
+      $(".mini-gallery").show()
+      $( ".top-left-img" ).html(image_sections[0])
+      $( ".top-right-img" ).html(image_sections[1])
+      $( ".bottom-left-img" ).html(image_sections[2])
+      $( ".bottom-right-img" ).html(image_sections[3])
+    }else {
+      $(".mini-gallery").hide()
+    }
     $('.slider-two').slick('removeSlide', null, null, true);
 
     for (i in tweets) {
-      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="square"></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+      $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="twitter-icon"><img src= "assets/images/icons/twitter-red.png"></img></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
     }
 
     $('#animatedModal')
