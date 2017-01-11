@@ -48,7 +48,6 @@ function fill_data(json_file){
     description_section = "<h4>Description:</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
-
     image_sections = ['','','','']
     var photoCount = 0;
     for (i in photos){
@@ -64,11 +63,15 @@ function fill_data(json_file){
     for (i in speakers) {
       speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
     }
-    console.log("tested")
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
-    $( ".video-embebed" ).html(youtube_section)
+    if(youtube_id != ""){
+      $(".video-embebed").show()
+      $( ".video-embebed").html(youtube_section)
+    }else {
+      $(".video-embebed").hide()
+    }
     if(photoCount > 0) {
       $(".mini-gallery").show()
       $( ".top-left-img" ).html(image_sections[0])
@@ -77,7 +80,6 @@ function fill_data(json_file){
       $( ".bottom-right-img" ).html(image_sections[3])
     }else {
       $(".mini-gallery").hide()
-      console.log("It is gone")
     }
     $('.slider-two').slick('removeSlide', null, null, true);
 
