@@ -3054,7 +3054,6 @@ function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
 
     name = json["name"]
-    description = json["session"]["description"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
