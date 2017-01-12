@@ -44,6 +44,7 @@ function fill_data(json_file){
     photos = json["photos"]
     tweets = json["tweets"]
 
+
     description_section = "<h2>"+name+"&nbsp;</h2><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
@@ -84,6 +85,11 @@ function fill_data(json_file){
 
     for (i in tweets) {
       $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="twitter-icon"><img src= "assets/images/icons/twitter-red.png"></img></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+    }
+
+    if(json.hasOwnProperty('conference_notes')){
+      conference_notes = json["conference_notes"]
+      $( ".mini-gallery").html(conference_notes)
     }
 
     $('#animatedModal')
