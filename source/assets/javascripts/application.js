@@ -37,15 +37,15 @@ function UpdateQueryString(key, value, url) {
 
 function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
-
-    description = json["session"]["description"]
+    name = json["name"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
     photos = json["photos"]
     tweets = json["tweets"]
 
-    description_section = "<h4>Description:&nbsp;</h4><h5>"+description+"</h5><a href='"+notes+"'>Go to Notes</a>"
+
+    description_section = "<h2>"+name+"&nbsp;</h2><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
@@ -85,6 +85,11 @@ function fill_data(json_file){
 
     for (i in tweets) {
       $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="twitter-icon"><img src= "assets/images/icons/twitter-red.png"></img></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+    }
+
+    if(json.hasOwnProperty('conference_notes')){
+      conference_notes = json["conference_notes"]
+      $( ".mini-gallery").html(conference_notes)
     }
 
     $('#animatedModal')

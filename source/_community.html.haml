@@ -1,13 +1,13 @@
 %section.community#community
 	.container
-		%h2.border Community
+		%h2.border Pre-events
 		%h4 Pick an Event:
 		.gallery
 			.cols
 				.thirty-col
 					%ul.tabs#community_tabs
 						%li.tab.community_title
-							=link_to 'Hands-on', '#', class: 'tab-link'
+							=link_to '1', '#', class: 'tab-link'
 							.tab-content
 								%ul.accordion
 									%li
@@ -41,7 +41,7 @@
 										%h4
 											=link_to "HIVOS Open Contracting training", '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('hivos_open_contracting_training.json')"
 						%li.tab.community_title
-							=link_to 'Talks', '#', class: 'tab-link'
+							=link_to '2', '#', class: 'tab-link'
 							.tab-content
 								%ul.accordion
 									%li
@@ -52,18 +52,12 @@
 											=link_to 'Open Cities Summit', '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('open_cities_summit.json')"
 									%li
 										%h4
-											=link_to 'Open Data and Culture', '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('data_+_culture.json')"
-									%li
-										%h4
-											=link_to 'My Best Open Data Fail', '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('my_best_open_data_fail.json')"
-									%li
-										%h4
 											=link_to "Openness and National Statistical Offices: A Review of Available Tools and Methods", '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('openness_and_national_statistical_offices_a_review_of_available_tools_and_methods.json')"
 									%li
 										%h4
 											=link_to "Follow the Money and Open Data: Mapping Assets, Building Synergies", '#animatedModal', class: 'sections-text session-info', :onclick => "fill_data('follow_the_money_and_open_data_mapping_assets_building_synergies.json')"
 						%li.tab.community_title
-							=link_to 'Pre-events', '#', class: 'tab-link'
+							=link_to '3', '#', class: 'tab-link'
 							.tab-content
 								%ul.accordion
 									%li
@@ -90,17 +84,3 @@
 				.seventy-col
 					.h1-w2
 						=image_tag 'photos/community1.jpg'
-		.cols
-			.half-col
-				.row
-					.box-wide
-						=image_tag 'photos/community2.jpg'
-					.box-small
-						=image_tag 'photos/community3.jpg'
-				.row
-					.box-small
-						=image_tag 'photos/community4.jpg'
-					.box-wide
-						=image_tag 'photos/community5.jpg'
-			.half-col
-				=image_tag 'photos/community6.jpg'
