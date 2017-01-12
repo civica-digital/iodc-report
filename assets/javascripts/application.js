@@ -3052,13 +3052,13 @@ function UpdateQueryString(key, value, url) {
 
 function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
-
     name = json["name"]
     notes = json["notes"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
     photos = json["photos"]
     tweets = json["tweets"]
+
 
     description_section = "<h2>"+name+"&nbsp;</h2><a href='"+notes+"'>Go to Notes</a>"
 
@@ -3100,6 +3100,11 @@ function fill_data(json_file){
 
     for (i in tweets) {
       $( ".slider-two" ).slick('slickAdd','<div class="item"><div class="twitter-icon"><img src= "assets/images/icons/twitter-red.png"></img></div><div class="item-info">'+tweets[i]["content"]+'</div></div>')
+    }
+
+    if(json.hasOwnProperty('conference_notes')){
+      conference_notes = json["conference_notes"]
+      $( ".mini-gallery").html(conference_notes)
     }
 
     $('#animatedModal')
