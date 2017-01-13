@@ -41,7 +41,6 @@ function fill_data(json_file){
     notes = json["notes"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
-    photos = json["photos"]
     tweets = json["tweets"]
 
 
@@ -49,11 +48,6 @@ function fill_data(json_file){
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
-    var photoCount = 0;
-    for (i in photos){
-      image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
-      photoCount ++;
-    }
 
     speakers_section = ""
 
@@ -71,15 +65,6 @@ function fill_data(json_file){
       $( ".video-embebed").html(youtube_section)
     }else {
       $(".video-embebed").hide()
-    }
-    if(photoCount > 0) {
-      $(".mini-gallery").show()
-      $( ".top-left-img" ).html(image_sections[0])
-      $( ".top-right-img" ).html(image_sections[1])
-      $( ".bottom-left-img" ).html(image_sections[2])
-      $( ".bottom-right-img" ).html(image_sections[3])
-    }else {
-      $(".mini-gallery").hide()
     }
     $('.slider-two').slick('removeSlide', null, null, true);
 

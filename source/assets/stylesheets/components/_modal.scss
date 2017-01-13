@@ -45,80 +45,43 @@
             height: 100%;
           }
         }
-        .mini-gallery {
-          width: 40%;
-          float: right;
-          height: 100%;
-          overflow: hidden;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-
-          .top-left-img {
-            width: calc(50% - 10px);
-            float: left;
-            margin-bottom: 15px;
-            a {
-              float: left;
-              margin: 0;
-            }
-          }
-          .top-right-img {
-            width: calc(50% - 10px);
+        .conference-info {
+            width: 40%;
             float: right;
-            margin-bottom: 15px;
-            a {
-              float: right;
+            height: 100%;
+            overflow: hidden;
+          .conference-feed {
+            margin-top: 10px;
+            h2 {
               margin: 0;
             }
-          }
-
-          .bottom-left-img {
-            @extend .top-left-img;
-            margin: 0;
-          }
-          .bottom-right-img {
-            @extend .top-right-img;
-            margin: 0;
-          }
-          img {
-            display: block;
-            padding:0!important;
-            margin: 0!important;
-            max-width: 100%;
-          }
-        }
-      }
-      .conference-feed {
-        margin-top: 10px;
-        h2 {
-          margin: 0;
-        }
-        .slider-two{
-          .slick-track{
-            display:flex;
-            align-items: center;
-          }
-          button {
-            z-index: 2;
-          }
-          .item {
-            display: flex;
-            padding: 0 15px 0 30px;
-            .item-info {
-              width: calc(100% - 50px);
-              h5, h4 {
-                display: inline;
+            .slider-two{
+              .slick-track{
+                display:flex;
+                align-items: center;
               }
-              h5 {
-                font-weight: regular;
+              button {
+                z-index: 2;
               }
-              p {margin: 0;}
-            }
-            .twitter-icon {
-              height: 20px;
-              width: 20px;
-              margin: 5px 5px 0 5px;
+              .item {
+                display: flex;
+                padding: 0 15px 0 30px;
+                .item-info {
+                  width: calc(100% - 50px);
+                  h5, h4 {
+                    display: inline;
+                  }
+                  h5 {
+                    font-weight: regular;
+                  }
+                  p {margin: 0;}
+                }
+                .twitter-icon {
+                  height: 20px;
+                  width: 20px;
+                  margin: 5px 5px 0 5px;
+                }
+              }
             }
           }
         }
@@ -133,7 +96,7 @@
     padding: 60px 10px 40px 10px;
     .modal-content .conference-feed .slider-two .item {
       padding: 0 28px 0 32px;
-      .square {
+      .twitter-icon {
         display: none;
       }
       .item-info {
@@ -149,7 +112,7 @@
     flex-wrap: wrap;
     margin-top: 20px;
     height: auto;
-    .video-embebed, .mini-gallery {
+    .video-embebed, .conference-info {
       margin: 0 0 30px 0 !important;
       width: 100% !important;
       float: none !important;
