@@ -96,3 +96,7 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.slick-prev:before, .slick-next:before, .slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+  opacity: 1 !important;
+}
