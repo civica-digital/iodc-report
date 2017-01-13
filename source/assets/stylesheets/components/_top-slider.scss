@@ -13,10 +13,12 @@
     padding: 0 35px;
     .item{
       display: flex;
-      padding: 30px;
+      padding: 30px 30px 10px 30px;
+      justify-content: center;
       img{
         align-self: center;
-        max-width: 120px;
+        max-width: 70px;
+        min-width: 40px;
         margin-right: 20px;
       }
       h4{
@@ -29,7 +31,7 @@
     }
     @media (min-width: 320px) and (max-width: 959px){
       .item{
-        padding: 20px;
+        padding: 20px 20px 0 20px;
         img{
           max-width: 70px;
         }
