@@ -45,7 +45,7 @@ function fill_data(json_file){
     tweets = json["tweets"]
 
 
-    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description+"<a href='"+notes+"'>Go to Notes</a>"
+    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description+"<br><a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
