@@ -31,13 +31,18 @@
           =image_tag 'dfid-logo.png'
           =image_tag 'canada.png'
           =image_tag 'espania.png'
-
         %nav
+          =link_to 'https://www.facebook.com/opendatacon/' do
+            =image_tag 'icons/facebook-footer.svg'
+          =link_to 'https://twitter.com/opendatacon' do
+            =image_tag 'icons/twitter-footer.svg'
+          =link_to 'https://www.flickr.com/photos/144810968@N02/albums' do
+            =image_tag 'icons/youtube-footer.svg'
+          =link_to 'https://www.youtube.com/channel/UC8cKSDSxKSbOnKliM_MhZmQ' do
+            =image_tag 'icons/flickr-footer.svg'
           =link_to 'Report', 'https://drive.google.com/drive/folders/0B9TvqAthISVSWFlaTnBVUy1XLUE'
           =link_to 'Contact', '#'
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
-    //= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.0/lity.css"
-    //= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.0/lity.js"
     = stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.3/css/selectize.css"
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.3/js/standalone/selectize.js"
     = javascript_include_tag "application"
