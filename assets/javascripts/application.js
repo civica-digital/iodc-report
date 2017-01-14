@@ -3069,7 +3069,7 @@ function fill_data(json_file){
     if(youtube["content_type"] == "video"){
       youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube["data"]+'"></iframe>'
     } else {
-      youtube_section = '<a href="'+youtube["data"]["url"]+'"><img src="https://' + youtube["data"]["file"] + '"></a>'
+      youtube_section = '<a href="'+youtube["data"]["url"]+'"><img src="https://' + youtube["data"]["file"].replace("_m.jpg",".jpg") + '"></a>'
     }
 
     speakers_section = ""
@@ -3085,7 +3085,7 @@ function fill_data(json_file){
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
-    if(youtube_id != ""){
+    if(youtube != ""){
       $(".video-embebed").show()
       $( ".video-embebed").html(youtube_section)
     }else {
