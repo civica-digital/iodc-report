@@ -39,16 +39,23 @@ function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
     name = json["name"]
     notes = json["notes"]
-    description = json["session"]["description"]
+    description = json["info"]
     speakers = json["session"]["speakers"]
-    youtube_id = json["youtube"]
+    youtube = json["youtube"]
     tweets = json["tweets"]
 
+    if(description == "[empty]"){
+      description = json["session"]["description"]
+    }
 
-    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description+"<br><a href='"+notes+"'>Go to Notes</a>"
+    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description
 
-    youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
-    image_sections = ['','','','']
+
+    if(youtube["content_type"] == "video"){
+      youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube["data"]+'"></iframe>'
+    } else {
+      youtube_section = '<a href="'+youtube["data"]["url"]+'"><img src="https://' + youtube["data"]["file"] + '"></a>'
+    }
 
     speakers_section = ""
 
@@ -58,6 +65,8 @@ function fill_data(json_file){
     for (i in speakers) {
       speakers_section = speakers_section + "<a href='https://internationalopendataconfer2016.sched.org"+speakers[i]["profile"]+"'>"+speakers[i]["speaker"]+"</a>"
     }
+
+    speakers_section = speakers_section + "<a href='"+notes+"'>Go to Notes</a>"
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
