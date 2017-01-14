@@ -849,11 +849,11 @@ header {
     margin-top: 0px;
     width: 70%;
     float: right;
-    padding-right: 30px;
-    text-align: right; }
+    padding-right: 30px; }
     .cols .seventy-col:last-child {
       padding-right: 0;
-      padding-left: 30px; }
+      padding-left: 30px;
+      text-align: right; }
   .cols .thirty-col {
     margin-top: 0px;
     width: 30%;
