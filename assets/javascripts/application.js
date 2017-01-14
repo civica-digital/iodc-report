@@ -3054,21 +3054,16 @@ function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
     name = json["name"]
     notes = json["notes"]
+    description = json["session"]["description"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
-    photos = json["photos"]
     tweets = json["tweets"]
 
 
-    description_section = "<h2>"+name+"&nbsp;</h2><a href='"+notes+"'>Go to Notes</a>"
+    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description+"<a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
-    var photoCount = 0;
-    for (i in photos){
-      image_sections[i] = '<a href="'+photos[i]["url"]+'"><img src="https://' + photos[i]["file"] + '"></a>'
-      photoCount ++;
-    }
 
     speakers_section = ""
 
@@ -3087,15 +3082,6 @@ function fill_data(json_file){
     }else {
       $(".video-embebed").hide()
     }
-    if(photoCount > 0) {
-      $(".mini-gallery").show()
-      $( ".top-left-img" ).html(image_sections[0])
-      $( ".top-right-img" ).html(image_sections[1])
-      $( ".bottom-left-img" ).html(image_sections[2])
-      $( ".bottom-right-img" ).html(image_sections[3])
-    }else {
-      $(".mini-gallery").hide()
-    }
     $('.slider-two').slick('removeSlide', null, null, true);
 
     for (i in tweets) {
@@ -3104,7 +3090,7 @@ function fill_data(json_file){
 
     if(json.hasOwnProperty('conference_notes')){
       conference_notes = json["conference_notes"]
-      $( ".mini-gallery").html(conference_notes)
+      $( ".conference-review").html(conference_notes)
     }
 
     $('#animatedModal')
