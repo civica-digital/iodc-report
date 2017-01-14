@@ -7,6 +7,59 @@
     margin-top: -110px;
     -webkit-background-clip: content-box;
     background-clip: content-box;
+    .introtext {
+      display: inline-block;
+      text-align: left;
+      li {
+         list-style:disc;
+         color:#DC0833;
+         span {
+           color:#747474;
+         }
+       }
+    }
+    .doc-link {
+      display: inline-block;
+      color: #DC0833;
+      padding: 0 11px;
+      line-height: 59px;
+      font-family: 'Open Sans', sans-serif;
+      height: 65px;
+      margin-right: 3px;
+      cursor: pointer;
+      border: 3px solid #DC0833;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      .doc-text:before{
+        vertical-align: middle;
+        content: url(../images/icons/discuss_red.svg);
+        background-size: 40px;
+        background-size: contain;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+    }
+
+    .doc-link:hover {
+      background-color: #DC0833;
+      .doc-text:before{
+        vertical-align: middle;
+        content: url(../images/icons/discuss_white.svg);
+        background-size: 40px;
+        background-size: contain;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+      .doc-text{
+        color:#fff !important;
+      }
+     }
+
   }
   .slider{
     margin-top: 80px;
@@ -59,4 +112,3 @@
     }
   }
 }
-
