@@ -50,6 +50,12 @@
             float: right;
             height: 100%;
             overflow: hidden;
+            .conference-review {
+              li:before{
+                content: "• ";
+                color: "$red"
+              }
+              }
           .conference-feed {
             margin-top: 10px;
             h2 {

@@ -39,12 +39,13 @@ function fill_data(json_file){
   $.getJSON("assets/javascripts/data/"+json_file, function(json) {
     name = json["name"]
     notes = json["notes"]
+    description = json["session"]["description"]
     speakers = json["session"]["speakers"]
     youtube_id = json["youtube"]
     tweets = json["tweets"]
 
 
-    description_section = "<h2>"+name+"&nbsp;</h2><a href='"+notes+"'>Go to Notes</a>"
+    description_section = "<h2>"+name+"&nbsp;</h2><br>"+description+"<a href='"+notes+"'>Go to Notes</a>"
 
     youtube_section = '<iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/'+youtube_id+'"></iframe>'
     image_sections = ['','','','']
@@ -74,7 +75,7 @@ function fill_data(json_file){
 
     if(json.hasOwnProperty('conference_notes')){
       conference_notes = json["conference_notes"]
-      $( ".mini-gallery").html(conference_notes)
+      $( ".conference-review").html(conference_notes)
     }
 
     $('#animatedModal')
