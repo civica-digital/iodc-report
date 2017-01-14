@@ -1,11 +1,12 @@
 footer {
   background-color: $red;
-  height: 90px;
   margin-top: 40px;
   font-family: $heading-font-family;
+  padding: 20px 0;
   .logos{
-    padding-top: 20px;
+    width: 50%;
     display: inline-block;
+    text-align: center;
     img{
       max-height: 40px;
       margin-right: 18px;
@@ -19,27 +20,37 @@ footer {
       font-weight: bold;
       padding-left: 20px;
       font-size: 16px;
+      max-height: 20px;
       &:hover{
         color: #fff;
         text-decoration: underline;
       }
     }
+    a:nth-child(-n+4) {
+      text-decoration: none;
+    }
   }
   @media (min-width: 320px) and (max-width: 1199px){
     height: auto;
+    text-align: center;
 
     .logos{
+      width: 100%;
       img{
         max-height: 35px;
       }
     }
-    nav{
+    nav {
+      width: 100%;
       float: none;
-      line-height: 50px;
-      padding-bottom: 20px;
+      line-height: 30px;
+      padding-top: 20px;
       a{
         padding-left: 0px;
         padding-right: 20px;
+      }
+      a:nth-last-child(-n+2) {
+        display: block;
       }
     }
   }
