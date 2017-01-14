@@ -70,7 +70,7 @@ function fill_data(json_file){
 
     $( ".session-description" ).html(description_section);
     $( ".speaker-section" ).html(speakers_section)
-    if(youtube_id != ""){
+    if(youtube != ""){
       $(".video-embebed").show()
       $( ".video-embebed").html(youtube_section)
     }else {
