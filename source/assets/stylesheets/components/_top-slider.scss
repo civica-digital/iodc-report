@@ -59,7 +59,47 @@
         color:#fff !important;
       }
      }
+     .report-link {
+       display: inline-block;
+       color: #DC0833;
+       padding: 0 11px;
+       line-height: 59px;
+       font-family: 'Open Sans', sans-serif;
+       height: 65px;
+       margin-right: 3px;
+       cursor: pointer;
+       border: 3px solid #DC0833;
+       font-size: 16px;
+       font-weight: 700;
+       text-align: center;
+       .report-text:before{
+         vertical-align: middle;
+         content: url(../images/icons/doc_red.svg);
+         background-size: 40px;
+         background-size: contain;
+         display: inline-block;
+         width: 40px;
+         height: 40px;
+         margin-right: 10px;
+       }
+     }
 
+     .report-link:hover {
+       background-color: #DC0833;
+       .report-text:before{
+         vertical-align: middle;
+         content: url(../images/icons/doc_white.svg);
+         background-size: 40px;
+         background-size: contain;
+         display: inline-block;
+         width: 40px;
+         height: 40px;
+         margin-right: 10px;
+       }
+       .report-text{
+         color:#fff !important;
+       }
+      }
   }
   .slider{
     margin-top: 80px;
